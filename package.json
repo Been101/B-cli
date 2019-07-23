@@ -1,0 +1,29 @@
+{
+  "name": "b-cli",
+  "version": "1.0.0",
+  "description": "cli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "bcli": "./bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Been101/B-cli.git"
+  },
+  "keywords": [
+    "cli",
+    "node"
+  ],
+  "author": "Been",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Been101/B-cli/issues"
+  },
+  "homepage": "https://github.com/Been101/B-cli#readme",
+  "dependencies": {
+    "commander": "^2.20.0"
+  }
+}
