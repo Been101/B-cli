@@ -1,23 +1,6 @@
 #!/usr/bin/env node
-
-const program = require('commander')
-const fs = require('fs')
-
-program
-    .command('list')
-    .description('list files in current working directory.')
-    .option('-a, --all', 'Whether to display hidden files')
-    .action( options => {
-        console.log(options)
-        fs.readdir( process.cwd(), (err, files) => {
-            let list = files
-            if(!options.all){
-                list = files.filter( file => {
-                    return !file.startsWith('.')
-                })
-            }
-            console.log(list.join('\n\r'))
-        })
-    })
-
-program.parse( process.argv )
+try{
+    require(`../src/command/${process.argv[2]}.js`)
+} catch( err ){
+    console.log(`Cannot find module ../src/command/${process.argv[2]}.js`)
+}
