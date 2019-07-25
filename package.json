@@ -28,6 +28,7 @@
     "babel-eslint": "^10.0.2",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-preset-latest-node": "^3.2.1",
-    "commander": "^2.20.0"
+    "commander": "^2.20.0",
+    "inquirer": "^6.5.0"
   }
 }
