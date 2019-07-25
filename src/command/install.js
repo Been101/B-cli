@@ -1,12 +1,14 @@
 const inquirer = require('inquirer')
 const program = require('commander')
+const downloadGitRepo = require('download-git-repo')
+
 
 program
     .command('install')
     .description('install template')
     .action( option => {
         console.log('install')
-        let choices = ['a', 'b', 'c']
+        let choices = ['history', 'canvas', 'gooooooooo']
         const question = [
             {
                 type: 'list',
@@ -16,7 +18,10 @@ program
             }
         ]
         inquirer.prompt(question).then(answer=> {
-            console.log(answer)
+            const repository = `github:Been101/${answer.repo}`
+            downloadGitRepo(repository, './test', false, err => {
+                console.log(err ? 'fail' : 'success')
+            })
         })
     })
     program.parse(process.argv)
