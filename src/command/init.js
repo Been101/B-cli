@@ -1,10 +1,8 @@
-const program = require('commander')
-
-program
-    .command('init')
-    .description('init project for local.')
-    .action( options => {
-        console.log(options._name)
-        console.log('init project success')
-    })
-program.parse(process.argv)
+// const argv = require('yargs')
+//         .command("init", 'init project', yargs => {
+//             require(`../src/command/init.js`)
+//         })
+//         .argv
+module.exports = function init() {
+    console.log('init')
+}

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-try{
-    require(`../src/command/${process.argv[2]}.js`)
-} catch( err ){
-    console.log(`Cannot find module ../src/command/${process.argv[2]}.js`)
-}
+const { init, install } = require('../src/command')
+const argv = require('yargs')
+        .command("init", 'init project', init)
+        .command("install", 'install project', install)
+        .argv
