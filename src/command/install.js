@@ -1,7 +1,8 @@
 const inquirer = require('inquirer')
 const downloadGitRepo = require('download-git-repo')
+const CWD = `${process.cwd()}/demo`
+
 module.exports = function install(yargs) {
-    console.log('install')
     let choices = ['history', 'canvas', 'gooooooooo']
     const question = [
         {
@@ -13,7 +14,7 @@ module.exports = function install(yargs) {
     ]
     inquirer.prompt(question).then(answer=> {
         const repository = `github:Been101/${answer.repo}`
-        downloadGitRepo(repository, './test', false, err => {
+        downloadGitRepo(repository, CWD, false, err => {
             console.log(err ? 'fail' : 'success')
         })
     })

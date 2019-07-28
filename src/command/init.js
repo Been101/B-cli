@@ -1,8 +1,12 @@
-// const argv = require('yargs')
-//         .command("init", 'init project', yargs => {
-//             require(`../src/command/init.js`)
-//         })
-//         .argv
-module.exports = function init() {
-    console.log('init')
+module.exports = function init(yargs) {
+    const argv = yargs.reset()
+        .option('y', {
+            alias: 'yes',
+            description: 'init project -y --yes.'
+        })
+        .help('h')
+        .alias('h', 'help')
+        .argv
+
+    console.log('init', argv.y)
 }
